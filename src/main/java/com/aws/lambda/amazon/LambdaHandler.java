@@ -27,7 +27,7 @@ public class LambdaHandler implements RequestHandler<ScheduledEvent, String> {
 
         //send text of dog pics
         PublishResult result = SnsService.sendMessage(message);
-        log.info(result.toString());
+        log.info("Message Result: " + result.getSdkHttpMetadata().getHttpStatusCode());
 
         log.info("Ending lambda to send cute dog pics");
         return null;
